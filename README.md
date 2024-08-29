@@ -57,5 +57,5 @@ Create a simple blog management system that allows users to create, read, update
 - Move folder that downloaded to xampp->htdocs folder
 - Run xampp app
 - Start Apache and MySql
-- Move to browser and set in url http://localhost/Blog-system/post/list_posts.php
+- Move to browser and set in url http://localhost/Blog-system/index.php
 ```

@@ -1,5 +1,5 @@
 <?php
-include("../index.php");
+require_once(__DIR__ . '\post.php');
 $title = $_POST['title'];
 $content = $_POST['content'];
 $author = $_POST['author'];

@@ -1,7 +1,7 @@
 <?php
-include("../index.php");
-$post1 = new Post();
-$posts = $post1->listAll();
+require_once("../controllers/post.php");
+$p = new Post();
+$posts = $p->listAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ $posts = $post1->listAll();
             <h6 class="card-subtitle mb-2 text-body-secondary">author: <?php echo $post['author']; ?></h6>
             <p class="card-text"><?php echo $post['content']; ?></p>
             <a href='edit_post.php?id=<?php echo $post["id"] ?>' class="btn btn-info text-white">Edit</a>
-            <a href='delete_post.php?id=<?php echo $post["id"] ?>' class="btn btn-danger text-white">Delete</a>
+            <a href='../controllers/delete_post.php?id=<?php echo $post["id"] ?>' class="btn btn-danger text-white">Delete</a>
           </div>
         </div>
 

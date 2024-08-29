@@ -1,8 +1,8 @@
 <?php
-include("../index.php");
+require_once("../controllers/post.php");
 $post_id = $_GET['id'];
-$post1 = new Post($post_id);
-$post = $post1->read($post_id);
+$p = new Post($post_id);
+$post = $p->read($post_id);
 ?>
 
 <!DOCTYPE html>

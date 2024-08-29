@@ -1,16 +1,10 @@
-<?php
-include("../index.php");
-$post_id = $_GET['id'];
-$db = new Database();
-$post = $db->read($post_id);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Post</title>
+  <title>Create Post</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -21,25 +15,23 @@ $post = $db->read($post_id);
 <body>
   <section class="section">
     <nav class="bg-info text-center">
-      <h1 class="text-white py-4">Edit Post</h1>
+      <h1 class="text-white py-4">Create New Post</h1>
     </nav>
     <div class="container d-flex flex-row gap-5 justify-content-center">
-      <form action="update.php?id=<?php echo $post['id'] ?>" method="post" class="w-100">
+      <form action="../controllers/store.php" method="post" class="w-100">
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
-          <input type="text" class="form-control" id="title" name="title" value=<?php echo $post['title'] ?> required>
+          <input type="text" class="form-control" id="title" name="title" required>
         </div>
         <div class="mb-3">
           <label for="author" class="form-label">Author</label>
-          <input type="text" class="form-control" id="author" name="author" value=<?php echo $post['author'] ?> required>
+          <input type="text" class="form-control" id="author" name="author" required>
         </div>
         <div class="mb-3">
           <label for="content" class="form-label d-block">Content</label>
-          <textarea class="w-100" name="content" id="content" rows="10" required>
-<?php echo $post['content'] ?>
-          </textarea>
+          <textarea class="w-100" id="content" name="content" rows="10" required></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Update</button>
+        <button class="btn btn-primary" type="submit">Create</button>
       </form>
     </div>
   </section>
