@@ -1,5 +1,5 @@
 <?php
-require_once("../controllers/post.php");
+require_once("../models/Post.php");
 $post_id = $_GET['id'];
 $p = new Post($post_id);
 $post = $p->read($post_id);
@@ -27,14 +27,13 @@ $post = $p->read($post_id);
     <div class="container">
       <div class="card my-3">
         <div class="card-header">
-          <h4 class="card-title">Id: <?php echo $post['id']; ?></h4>
+          <h4 class="card-title">Title: <?php echo $post['title']; ?></h4>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Title: <?php echo $post['title']; ?></h5>
-          <h6 class="card-subtitle my-2 text-body-secondary">Author: <?php echo $post['author']; ?></h6>
-          <p class="card-text">Content: <?php echo $post['content']; ?></p>
-          <a href='edit_post.php?id=<?php echo $post["id"] ?>' class="btn btn-info text-white">Edit</a>
-          <a href='delete_post.php?id=<?php echo $post["id"] ?>' class="btn btn-danger text-white">Delete</a>
+          <h5 class="card-title">Author: <?php echo $post['author']; ?></h5>
+          <h6 class="card-subtitle my-2 text-body-secondary">Content: <?php echo $post['content']; ?></h6>
+          <a href='editPostView.php?id=<?php echo $post["id"] ?>' class="btn btn-info text-white">Edit</a>
+          <a href='../controllers/DeleteController.php?id=<?php echo $post["id"] ?>' class="btn btn-danger text-white">Delete</a>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . '\database.php');
+require_once('../database/database.php');
 
 class Post
 {
@@ -24,11 +24,11 @@ class Post
   public function create()
   {
     if (empty(trim($this->title)) || empty(trim($this->author)) || empty(trim($this->content))) {
-      header("Location: ../views/create_post.php");
+      header("Location: ../views/createPostView.php");
       return;
     }
     $this->db->create($this->title, $this->author, $this->content);
-    header('Location: ../views/list_posts.php');
+    header('Location: ../views/listPostsView.php');
   }
 
   public function read($id)
@@ -39,17 +39,17 @@ class Post
   public function update($id)
   {
     if (empty(trim($this->title)) || empty(trim($this->author)) || empty(trim($this->content))) {
-      header("Location: ../views/edit_post.php?id=$id");
+      header("Location: ../views/editPostView.php?id=$id");
       return;
     }
     $this->db->update($id, $this->title, $this->author, $this->content);
-    header("Location: ../views/list_posts.php");
+    header("Location: ../views/listPostsView.php");
   }
 
   public function delete($id)
   {
     $this->db->delete($id);
-    header("Location: ../views/list_posts.php");
+    header("Location: ../views/listPostsView.php");
   }
 
   public function listAll()

@@ -1,3 +1,3 @@
 <?php
 
-header('Location: post/views/list_posts.php');
+header('Location: post/views/listPostsView.php');

@@ -1,5 +1,5 @@
 <?php
-require_once("../controllers/post.php");
+require_once("..\models\Post.php");
 $p = new Post();
 $posts = $p->listAll();
 ?>
@@ -21,7 +21,7 @@ $posts = $p->listAll();
   <section class="section">
     <nav class="bg-info text-center py-4">
       <h1 class="text-white d-inline">Welcome to Osama Blog</h1>
-      <a href='create_post.php' class="btn btn-primary text-white align-bottom">Create</a>
+      <a href='createPostView.php' class="btn btn-primary text-white align-bottom">Create</a>
     </nav>
     <div class="container py-2 d-flex flex-row flex-wrap gap-5">
       <?php
@@ -29,15 +29,15 @@ $posts = $p->listAll();
       ?>
         <div class="card" style="width: 18rem;">
           <div class="card-header">
-            <a class="text-decoration-none" href="view_post.php?id=<?php echo $post['id'] ?>">
+            <a class="text-decoration-none" href="showPostView.php?id=<?php echo $post['id'] ?>">
               <h5 class="card-title text-black"><?php echo $post['title']; ?></h5>
             </a>
           </div>
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-body-secondary">author: <?php echo $post['author']; ?></h6>
             <p class="card-text"><?php echo $post['content']; ?></p>
-            <a href='edit_post.php?id=<?php echo $post["id"] ?>' class="btn btn-info text-white">Edit</a>
-            <a href='../controllers/delete_post.php?id=<?php echo $post["id"] ?>' class="btn btn-danger text-white">Delete</a>
+            <a href='editPostView.php?id=<?php echo $post["id"] ?>' class="btn btn-info text-white">Edit</a>
+            <a href='../controllers/DeleteController.php?id=<?php echo $post["id"] ?>' class="btn btn-danger text-white">Delete</a>
           </div>
         </div>
 

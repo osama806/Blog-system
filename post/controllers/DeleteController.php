@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '\post.php');
+require_once('../models/Post.php');
 $post_id = $_GET['id'];
 $post = new Post();
 $post->delete($post_id);

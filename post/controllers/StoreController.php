@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '\post.php');
+require_once('../models/Post.php');
 $title = $_POST['title'];
 $content = $_POST['content'];
 $author = $_POST['author'];
